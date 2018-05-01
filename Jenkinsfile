@@ -1,5 +1,7 @@
 pipeline {
-  agent none
+  agent {
+    label 'jdk8'
+  }
   stages {
     stage('Say Hello') {
       steps {
@@ -9,12 +11,6 @@ pipeline {
         sh 'java -version'
       }
     }
-    stage('Checkpoint') {
-         agent none
-         steps {
-            checkpoint 'Checkpoint'
-         }
-      }
     stage('Testing') {
       failFast true
       parallel {
