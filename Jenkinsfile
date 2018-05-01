@@ -24,6 +24,7 @@ pipeline {
         echo "Deploying ${APP_VERSION}."
       }
     }
+  }
   environment {
     MY_NAME = 'Bee'
     TEST_USER = credentials('test-user')
